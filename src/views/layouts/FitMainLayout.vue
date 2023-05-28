@@ -44,6 +44,7 @@ const { pageMode } = storeToRefs(mainStore);
 
 const route = useRoute();
 const routerKey: ComputedRef<string> = computed(() => {
+	console.warn(import.meta.env.BASE_URL);
 	const key = route.meta?.key ?? route.name;
 	return key ? key.toString() : "";
 });
