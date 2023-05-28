@@ -30,6 +30,8 @@
 		"./src/**/*.d.ts",
 		"./src/**/*.tsx",
 		"./src/**/*.vue",
+		"./src/**/*.vue.js",
+		"./src/**/*.vue.ts",
 		"./src/**/*.scss"
 	],
 	"references" : [
