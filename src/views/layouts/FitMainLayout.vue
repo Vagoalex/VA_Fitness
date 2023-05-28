@@ -44,7 +44,7 @@ const { pageMode } = storeToRefs(mainStore);
 
 const route = useRoute();
 
-const routerKey = computed(() => (route.meta.key || route.name) as string);
+const routerKey = computed(() => route.meta.key || route.name);
 </script>
 
 <style lang="scss">
