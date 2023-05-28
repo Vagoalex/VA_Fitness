@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, watch, ref, computed, Ref } from "vue";
+import { watch, ref, Ref } from "vue";
 import UiIcon from "@/components/icon/UiIcon.vue";
 import { AlertsType } from "@/types/alertsType";
 
