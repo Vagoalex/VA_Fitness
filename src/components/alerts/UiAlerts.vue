@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-
 import UiAlertsToast from "@/components/alerts/UiAlertsToast.vue";
 import { useAlertsStore } from "@/store/shared/alerts";
 import { storeToRefs } from "pinia";
