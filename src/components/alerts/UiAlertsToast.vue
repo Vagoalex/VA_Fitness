@@ -1,10 +1,10 @@
 ﻿<template>
-	<div class="toast" :class="computed.background()">
+	<div class="toast" :class="background">
 		<div class="toast__body">
 			<template v-if="icon">
 				<div class="toast-icon">
 					<ui-icon :name="icon"
-							 :color="computed.icoColor()"
+							 :color="icoColor"
 							 width="30"
 							 height="30">
 					</ui-icon>
@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch, ref, Ref } from "vue";
+import { computed, watch, ref, Ref } from "vue";
 import UiIcon from "@/components/icon/UiIcon.vue";
 import { AlertsType } from "@/types/alertsType";
 
@@ -48,35 +48,32 @@ const close = () => emit("close");
 
 const isShown = ref(true);
 
-const computed = {
-	background: () => {
-		switch (props.type) {
-			case AlertsType.ERROR:
-			{
-				return `toast__background--${AlertsType.ERROR}`;
-			}
-			case AlertsType.INFO:
-			{
-				return `toast__background--${AlertsType.INFO}`;
-			}
+const background = computed(() => {
+	switch (props.type) {
+		case AlertsType.ERROR:
+		{
+			return `toast__background--${AlertsType.ERROR}`;
 		}
-	},
-	icoColor: () => {
-		switch (props.type) {
-			case AlertsType.ERROR:
-			{
-				return "#ff0000";
-			}
-			case AlertsType.INFO:
-			{
-				return "#002aff";
-			}
+		case AlertsType.INFO:
+		{
+			return `toast__background--${AlertsType.INFO}`;
 		}
 	}
-};
+});
+const icoColor = computed(() => {
+	switch (props.type) {
+		case AlertsType.ERROR:
+		{
+			return "#ff0000";
+		}
+		case AlertsType.INFO:
+		{
+			return "#002aff";
+		}
+	}
+});
 
 if(props.timeout) setTimeout(close, props.timeout);
-
 
 watch(() => isShown, (newValue: Ref<boolean>) => {
 	if(!newValue) {

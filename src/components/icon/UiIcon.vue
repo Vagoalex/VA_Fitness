@@ -15,11 +15,17 @@ const props = defineProps({
 		required: true
 	},
 	width: {
-		type: [String, Number],
+		type: [
+			String,
+			Number
+		],
 		required: true
 	},
 	height: {
-		type: [String, Number],
+		type: [
+			String,
+			Number
+		],
 		required: true
 	},
 	color: String
@@ -27,6 +33,9 @@ const props = defineProps({
 
 const baseUrl = getBaseUrl();
 
-const styleObject = computed(() => ({ color: props.color, fill: props.color }));
+const styleObject = computed(() => ({
+	color: props.color,
+	fill: props.color
+}));
 const processedSrc = computed(() => `${baseUrl}/img/icons/${props.name}.svg`);
 </script>
