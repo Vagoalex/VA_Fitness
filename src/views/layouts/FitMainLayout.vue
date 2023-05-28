@@ -14,7 +14,7 @@
 					</ion-toolbar>
 				</ion-header>
 
-				<router-view :key="routerKey"/>
+				<router-view :key="`${routerKey}`"></router-view>
 				<ui-alerts></ui-alerts>
 			</ion-content>
 		</ion-page>
@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/vue";
-import { computed } from "vue";
+import { computed, ComputedRef } from "vue";
 import { useRootStore } from "@/store/modules/root";
 import { storeToRefs } from "pinia";
 import { PageModeType } from "@/store/modules/root/types/pageModeType";
@@ -43,9 +43,9 @@ const { pageMode } = storeToRefs(mainStore);
 
 
 const route = useRoute();
-const routerKey = computed(() => {
-	const key = route.meta && route.meta.key ? route.meta.key : route.name;
-	return key != null ? key.toString() : "";
+const routerKey: ComputedRef<string> = computed(() => {
+	const key = route.meta?.key ?? route.name;
+	return key ? key.toString() : "";
 });
 </script>
 
