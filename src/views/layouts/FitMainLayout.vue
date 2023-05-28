@@ -14,7 +14,7 @@
 					</ion-toolbar>
 				</ion-header>
 
-				<router-view :key="$route.meta.key || $route.name"/>
+				<router-view :key="routerKey"/>
 				<ui-alerts></ui-alerts>
 			</ion-content>
 		</ion-page>
@@ -28,16 +28,23 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/vue";
+import { computed } from "vue";
 import { useRootStore } from "@/store/modules/root";
 import { storeToRefs } from "pinia";
 import { PageModeType } from "@/store/modules/root/types/pageModeType";
 import FitPageNotFoundError from "@/views/errors/FitPageNotFoundError.vue";
 import FitAccessDeniedError from "@/views/errors/FitAccessDeniedError.vue";
 import UiAlerts from "@/components/alerts/UiAlerts.vue";
+import { useRoute } from "vue-router";
 
 const mainStore = useRootStore();
 const { pageMode } = storeToRefs(mainStore);
+
+
+const route = useRoute();
+
+const routerKey = computed(() => (route.meta.key || route.name) as string);
 </script>
 
 <style lang="scss">
