@@ -2,10 +2,7 @@
 	<h1>loginPage</h1>
 </template>
 
-<script>
-export default {
-	name: "FitLoginPage"
-};
+<script setup lang="ts">
 </script>
 
 <style scoped>
