@@ -8,6 +8,7 @@ import FitHome from "@/views/home/FitHome.vue";
 import FitInternalServerError from "@/views/errors/FitInternalServerError.vue";
 import FitAccessDeniedError from "@/views/errors/FitAccessDeniedError.vue";
 import FitPageNotFoundError from "@/views/errors/FitPageNotFoundError.vue";
+import { configureMiddleware } from "@/router/middleware";
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -59,5 +60,7 @@ const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes
 });
+
+configureMiddleware(router);
 
 export default router;

@@ -14,7 +14,7 @@
 					</ion-toolbar>
 				</ion-header>
 
-				<router-view></router-view>
+				<router-view :key="routerKey"></router-view>
 				<ui-alerts></ui-alerts>
 			</ion-content>
 		</ion-page>
@@ -45,9 +45,6 @@ const { pageMode } = storeToRefs(mainStore);
 const route = useRoute();
 const routerKey: ComputedRef<string> = computed(() => {
 	const key = route.meta?.key ?? route.name;
-	console.warn("route", route);
-	console.warn("route.name", route.name);
-	console.warn("key", key);
 	return key ? key.toString() : "";
 });
 </script>

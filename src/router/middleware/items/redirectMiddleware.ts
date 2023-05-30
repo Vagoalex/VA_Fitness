@@ -11,7 +11,6 @@ class RedirectMiddleware {
 			if(to.name === RouteNames.AUTH) {
 				return { name: RouteNames.AUTH_LOGIN_PAGE };
 			}
-			console.warn(to.name)
 			if(to.name === RouteNames.ROOT) {
 				const userStore = useUserStore();
 

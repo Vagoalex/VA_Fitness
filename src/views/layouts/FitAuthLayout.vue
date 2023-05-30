@@ -14,7 +14,7 @@
 					</ion-toolbar>
 				</ion-header>
 
-				<router-view></router-view>
+				<router-view :key="routerKey"></router-view>
 				<ui-alerts></ui-alerts>
 			</ion-content>
 		</ion-page>
