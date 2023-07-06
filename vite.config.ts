@@ -6,7 +6,9 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
 	server: {
-		host: "192.168.0.110",
+		host: "192.168.1.174",
+		//TODO: поправить на свой host у wifi
+		// host: "192.168.0.110",
 		port: 3000
 	},
 	plugins: [

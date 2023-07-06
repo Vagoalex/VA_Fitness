@@ -1,8 +1,9 @@
 ﻿import { RouteLocationNormalized } from "vue-router";
 import { RouteNames } from "@/router/routeNames";
 import { useUserStore } from "@/store/modules/user";
+import { IMiddleware } from "@/types/core/middleware";
 
-class RedirectMiddleware {
+export default class RedirectMiddleware implements IMiddleware {
 	constructor() {
 	}
 
@@ -28,5 +29,3 @@ class RedirectMiddleware {
 		}
 	}
 }
-
-export default new RedirectMiddleware();
