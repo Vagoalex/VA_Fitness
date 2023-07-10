@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/vue";
+import { IonContent, IonHeader, IonFooter, IonPage, IonTitle, IonToolbar } from "@ionic/vue";
 import { computed, ComputedRef } from "vue";
 import { useRootStore } from "@/store/modules/root";
 import { storeToRefs } from "pinia";

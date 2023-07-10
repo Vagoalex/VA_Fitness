@@ -1,7 +1,12 @@
 ﻿<template>
-	<div class="test">
-		<h1 class="test__title">{{ title }}</h1>
-		<div class="test-div">
+	<ion-page>
+		<ion-header :fullscreen="true">
+			<ion-toolbar>
+				<ion-title>{{ title }}</ion-title>
+			</ion-toolbar>
+		</ion-header>
+
+		<ion-content class="test-div">
 			<div>
 				Test counter: {{ count }}
 			</div>
@@ -44,14 +49,14 @@
 						</div>
 					</div>
 				</template>
-
 			</div>
-		</div>
-	</div>
+		</ion-content>
+	</ion-page>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { IonContent, IonPage, IonTitle, IonToolbar, IonHeader } from "@ionic/vue";
 import { storeToRefs } from "pinia";
 import { useRootStore } from "@/store/modules/root";
 import { useFakeApiProductsStore } from "@/store/modules/fakeApi/products";
@@ -74,20 +79,6 @@ const testSecretKey = import.meta.env.VITE_SECRET_ENV_LOCAL_TEST_CODE;
 </script>
 
 <style scoped lang="scss">
-.test {
-	margin: 0 auto;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	height: 100vh;
-
-	&__title {
-		color: red;
-		font-weight: 700;
-		text-transform: uppercase;
-	}
-}
 
 .test-div {
 	font-size: 20px;

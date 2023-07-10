@@ -11,7 +11,7 @@ export const configureMiddleware = (router: Router) => {
 		const publicRoute = to.matched.some(record => record.meta.public);
 
 		if(!publicRoute) {
-			middleware.useMiddleware(RedirectMiddleware);
+			// middleware.useMiddleware(RedirectMiddleware);
 		}
 
 		await middleware.run();

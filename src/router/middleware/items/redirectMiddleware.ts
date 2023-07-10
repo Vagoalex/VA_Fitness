@@ -18,10 +18,13 @@ export default class RedirectMiddleware implements IMiddleware {
 				const user = userStore.$state.user;
 
 				if(user)
-					return { name: RouteNames.HOME };
+					return { name: RouteNames.TABS };
 				else
 					return { name: RouteNames.AUTH };
 
+			}
+			if(to.name === RouteNames.TABS) {
+				return { name: RouteNames.HOME };
 			}
 
 		} catch (e) {
