@@ -1,9 +1,12 @@
 ﻿{
-	"routes" : [
+	"rewrites": [
 		{
-			"src" : "/[^.]+",
-			"dest" : "/",
-			"status" : 200
+			"source": "/:path((?!api/).*)",
+			"destination": "/index.html"
+		},
+		{
+			"source": "/:path(api/.*)",
+			"destination": "/api"
 		}
 	]
 }
