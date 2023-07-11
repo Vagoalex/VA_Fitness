@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	base: "/VA_Fitness/",
 	server: {
 		// host: "192.168.1.174",
 		//TODO: поправить на свой host у wifi
