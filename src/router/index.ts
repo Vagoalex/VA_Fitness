@@ -1,6 +1,5 @@
-import { createRouter, createWebHistory } from "@ionic/vue-router";
+import { createRouter, createWebHashHistory, createWebHistory } from "@ionic/vue-router";
 import { RouteRecordRaw } from "vue-router";
-import FitMainLayout from "@/views/layouts/FitMainLayout.vue";
 import { RouteNames } from "@/router/routeNames";
 import FitAuthLayout from "@/views/layouts/FitAuthLayout.vue";
 import FitLoginPage from "@/views/pages/auth/login/FitLoginPage.vue";
@@ -65,7 +64,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-	history: createWebHistory(import.meta.env.BASE_URL),
+	history: createWebHashHistory(import.meta.env.BASE_URL),
+	// history: createWebHistory(import.meta.env.BASE_URL),
 	routes
 });
 
