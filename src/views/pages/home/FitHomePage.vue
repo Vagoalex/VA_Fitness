@@ -18,7 +18,7 @@
 			<div class="flex">
 				<span>Test svg:</span>
 
-				<ui-icon name="vite"
+				<ui-icon name="ico-info"
 						 width="30"
 						 height="30">
 				</ui-icon>
