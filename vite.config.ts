@@ -9,7 +9,7 @@ export default defineConfig(({ command, mode }) => {
 	const env = loadEnv(mode, process.cwd(), "");
 
 	return {
-		base: env.NODE_ENV === "development" ? "/" : "/VA_Fitness/",
+		// base: env.NODE_ENV === "development" ? "/" : "/VA_Fitness/",
 		// server: {
 		// 	host: "192.168.1.174",
 		// 	port: 3000
